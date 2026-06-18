@@ -93,7 +93,7 @@ p{
     <h1>상호작용 지도</h1>
 
     <iframe
-        src="https://www.openstreetmap.org"
+        src="https://www.amcharts.com/demos/world-map-with-clustered-points/"
         width="80%"
         height="70%"
         style="border:none;">
@@ -102,42 +102,7 @@ p{
 
 <div id="page">1 / 3</div>
 
-<script>
-const slides = document.querySelectorAll(".slide");
-
-let current = 0;
-
-function showSlide(index){
-
-    slides.forEach(slide=>{
-        slide.classList.remove("active");
-    });
-
-    slides[index].classList.add("active");
-
-    document.getElementById("page").textContent =
-        `${index + 1} / ${slides.length}`;
-}
-
-document.addEventListener("keydown",(e)=>{
-
-    if(e.key==="ArrowRight"){
-        current = Math.min(
-            current + 1,
-            slides.length - 1
-        );
-    }
-
-    if(e.key==="ArrowLeft"){
-        current = Math.max(
-            current - 1,
-            0
-        );
-    }
-
-    showSlide(current);
-});
-</script>
+<script src="main.js"></script>
 
 </body>
 </html>
