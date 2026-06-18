@@ -10,19 +10,22 @@ function showSlide(index){
 
     slides[index].classList.add("active");
 
-    document.getElementById("page").textContent = `${index + 1} / ${slides.length}`;
+    var page_text = document.getElementById("page")
+    page_text.textContent = `${index + 1} / ${slides.length}`;
+
+    page_text.style.color = (index + 1 == slides.length) ? "#4f8cff" : "black";
 }
 
 document.addEventListener("keydown",(e)=>{
 
-    if(e.key==="ArrowRight"){
+    if(e.key==="ArrowRight" || e.key.toLowerCase()==="p"){
         current = Math.min(
             current + 1,
             slides.length - 1
         );
     }
 
-    if(e.key==="ArrowLeft"){
+    if(e.key==="ArrowLeft" || e.key.toLowerCase()==="o"){
         current = Math.max(
             current - 1,
             0
